@@ -20,8 +20,8 @@ public class EnemyEyes : MonoBehaviour
         if (hitInfo.collider != null)
         {
             Debug.DrawLine(transform.position, hitInfo.point, Color.red);
-            LineOfSight.SetPosition(1, hitInfo.point);
             LineOfSight.colorGradient = redColor;
+           
             if (hitInfo.collider.CompareTag("Player"))
             {
                 Destroy(hitInfo.collider.gameObject);
@@ -29,10 +29,9 @@ public class EnemyEyes : MonoBehaviour
             else
             {
                 Debug.DrawLine(transform.position, transform.position + transform.right * distance, Color.green);
-                LineOfSight.SetPosition(1, transform.position + transform.right * distance);
                 LineOfSight.colorGradient = greenColor;
             }
-            LineOfSight.SetPosition(0, transform.position);
+            
         }
     }
 }
