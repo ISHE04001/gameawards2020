@@ -25,6 +25,7 @@ public class PlayerCode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //låter koden använda sig av rigibody, speciellt dens gravitet.
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -42,8 +43,11 @@ public class PlayerCode : MonoBehaviour
     }
     void Move()
     {
+     //´"Horizontal låter oss lösa "a" och "d" tangenterna tillsammans. "a" har ett värde av -1 och "d" har ett värde av 1. Om ingen trycks ner så är x = 0. 
         float x = Input.GetAxisRaw("Horizontal");
+        //förklarar bara moveBy
         float moveBy = x * speed;
+        //Denna del är den som rör förflyttear spelaren
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
     }
     void Jump()

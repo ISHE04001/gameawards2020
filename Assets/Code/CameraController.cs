@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     }
 
     // LateUpdate is called after Update each frame
-    void LateUpdate()
+    void Update()
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
         transform.position = player.transform.position + offset;
